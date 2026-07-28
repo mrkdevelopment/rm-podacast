@@ -20,7 +20,7 @@ final class Init {
 	public static function get_services() {
 		return array(
 			Base\Activate::class,
-            PostTypes\Episode::class,
+			PostTypes\Episode::class,
 		);
 	}
 

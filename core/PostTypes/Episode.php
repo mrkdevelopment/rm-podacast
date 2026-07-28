@@ -1,6 +1,6 @@
 <?php
 /**
- * Handles the 'episode' custom post type.
+ * Handles the 'episode' custom post type AKA Podcast Episode.
  *
  * @package RM_PODCAST\PostTypes
  */
@@ -94,9 +94,17 @@ class Episode extends BaseController {
 	 */
 	public function register_post_type() {
 		$labels = array(
-			'name'          => _x( 'Episodes', 'Post type general name', 'matt-mission-core' ),
-			'singular_name' => _x( 'Episode', 'Post type singular name', 'matt-mission-core' ),
-			'menu_name'     => _x( 'Episodes', 'Admin Menu text', 'matt-mission-core' ),
+			'name'               => _x( 'Podcast', 'Post type general name', 'matt-mission-core' ),
+			'singular_name'      => _x( 'Podcast Episode', 'Post type singular name', 'matt-mission-core' ),
+			'menu_name'          => _x( 'Podcasts', 'Admin Menu text', 'matt-mission-core' ),
+			'add_new'            => _x( 'Add New Episode', 'matt-mission-core' ),
+			'add_new_item'       => _x( 'Add New Podcast Episode', 'matt-mission-core' ),
+			'edit_item'          => _x( 'Edit Episode', 'matt-mission-core' ),
+			'new_item'           => _x( 'New Episode', 'matt-mission-core' ),
+			'view_item'          => _x( 'View Episode', 'matt-mission-core' ),
+			'search_items'       => _x( 'Search Episodes', 'matt-mission-core' ),
+			'not_found'          => _x( 'No episodes found', 'matt-mission-core' ),
+			'not_found_in_trash' => _x( 'No episodes found in Trash', 'matt-mission-core' ),
 		);
 
 		$args = array(
@@ -116,28 +124,8 @@ class Episode extends BaseController {
 			'menu_position'      => 22,
 			'supports'           => array( 'title', 'editor', 'revisions', 'thumbnail', 'custom-fields' ),
 			'taxonomies'         => array( 'podcast-type-category' ),
-			'menu_icon'          => 'dashicons-tag',
+			'menu_icon'          => 'dashicons-microphone',
 			'show_in_rest'       => true,
-			'template'           => array(
-				array(
-					'stackable/video-popup',
-					array(),
-					array(
-						array( 'stackable/icon', array() ),
-						array( 'stackable/image', array() ),
-					),
-				),
-				array(
-					'core/heading',
-					array(
-						'level' => 2,
-					),
-				),
-				array(
-					'core/paragraph',
-					array(),
-				),
-			),
 		);
 
 		register_post_type( $this->post_type, $args );
