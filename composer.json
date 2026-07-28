@@ -1,0 +1,18 @@
+{
+    "name": "mrkwp/rm-podacast",
+    "description": "RM Podcast by Matt Knighton",
+    "type": "project",
+    "license": "GPLv2",
+    "authors": [
+        {
+            "name": "MRKWP",
+            "email": "support@mrkwp.com"
+        }
+    ],
+    "config": {
+        "vendor-dir": "lib"
+    },
+    "autoload": {
+        "psr-4": {"RM_PODCAST\\": "./core"}
+    }
+}

@@ -1,0 +1,34 @@
+{
+	"name": "rm-podacast",
+	"scripts": {
+		"opt-start": "wp-scripts start --webpack-src-dir=admin/options --output-path=assets/js/admin",
+		"opt-build": "wp-scripts build --webpack-src-dir=admin/options --output-path=assets/js/admin",
+		"start": "wp-scripts start --webpack-src-dir=blocks --output-path=build",
+		"build": "wp-scripts build --webpack-src-dir=blocks --output-path=build",
+		"plugin-zip": "wp-scripts plugin-zip",
+		"packages-update": "wp-scripts packages-update",
+		"convert-readme": "node convert-readme.js",
+    	"prepublishOnly": "npm run convert-readme"
+	},
+	"dependencies": {
+		"@wordpress/commands": "^1.36.0",
+		"@wordpress/data": "^10.36.0",
+		"@wordpress/i18n": "^6.9.0",
+		"@wordpress/icons": "^11.3.0",
+		"@wordpress/interactivity": "^6.36.0",
+		"@wordpress/scripts": "^31.1.0"
+	},
+	"files": [
+		"rm-podacast.php",
+		"admin",
+		"assets",
+		"build",
+		"lib",
+		"core",
+		"!README.md",
+		"!convert-readme.js"
+	],
+	"devDependencies": {
+		"@wpsh/to-wp-txt": "^0.1.1"
+	}
+}
