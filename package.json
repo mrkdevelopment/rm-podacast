@@ -8,15 +8,17 @@
 		"plugin-zip": "wp-scripts plugin-zip",
 		"packages-update": "wp-scripts packages-update",
 		"convert-readme": "node convert-readme.js",
-    	"prepublishOnly": "npm run convert-readme"
+		"prepublishOnly": "npm run build && npm run convert-readme",
+		"publish": "npm run build && npm run convert-readme && npm run plugin-zip",
+        "check-engines": "wp-scripts check-engines",
+		"check-licenses": "wp-scripts check-licenses"
 	},
 	"dependencies": {
 		"@wordpress/commands": "^1.36.0",
 		"@wordpress/data": "^10.36.0",
 		"@wordpress/i18n": "^6.9.0",
-		"@wordpress/icons": "^11.3.0",
 		"@wordpress/interactivity": "^6.36.0",
-		"@wordpress/scripts": "^31.1.0"
+		"@wordpress/scripts": "^33.0.0"
 	},
 	"files": [
 		"rm-podacast.php",
@@ -25,6 +27,7 @@
 		"build",
 		"lib",
 		"core",
+		"readme.txt",
 		"!README.md",
 		"!convert-readme.js"
 	],
